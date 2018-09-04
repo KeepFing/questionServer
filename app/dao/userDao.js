@@ -2,6 +2,8 @@ const mysql = require('./../util/mysqlUtil');
 
 const sql = require('../mapper/userMapper')
 
+const userQuestionModel = require('../model/userQuestion');
+
 var login = async (loginInfo) => {
     let mysqlOptions = {
         sql : sql.login,
@@ -30,9 +32,15 @@ let queryUserByUsername = async (username) => {
     return result;
 }
 
+let getUserQuestions = async (userId) => {
+    let result = userQuestionModel.getUserQuestionByUserId(userId);
+    return result;
+}
+
 
 module.exports = {
     login           :   login,
     register        :   register,
-    queryUserByUsername :   queryUserByUsername
+    queryUserByUsername :   queryUserByUsername,
+    getUserQuestions    :   getUserQuestions
 };

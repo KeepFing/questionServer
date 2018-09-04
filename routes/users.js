@@ -8,5 +8,6 @@ router.post('/login',user_controller.login)
 
 router.post('/register',user_controller.register)
 
+router.post('/getUserQuestions',user_controller.getUserQuestions)
 
 module.exports = router

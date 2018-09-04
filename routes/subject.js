@@ -14,4 +14,6 @@ router.post('/getQuestion',subject_controller.getQuestion)
 
 router.post('/saveQuestion',subject_controller.saveQuestion)
 
+router.post('/saveUserQuestion',subject_controller.saveUserQuestion)
+
 module.exports = router

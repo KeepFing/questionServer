@@ -4,6 +4,8 @@ const verify = require('../util/verify');
 
 const userModel = require('../model/user');
 
+
+
 exports.login = async (ctx, next) => {
     let params = ctx.request.body
 
@@ -13,4 +15,9 @@ exports.login = async (ctx, next) => {
 exports.register = async (ctx, next) => {
     let params = ctx.request.body
     ctx.response.body = await userService.register(params)
+}
+
+exports.getUserQuestions = async (ctx, next) => {
+    let params = ctx.request.body;
+    ctx.response.body = await userService.getUserQuestions(params);
 }

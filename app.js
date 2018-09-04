@@ -35,7 +35,7 @@ app.use(bodyparser({
 }))
 app.use(json())
 app.use(logger())
-app.use(require('koa-static')(__dirname + '/public/upload/'))
+app.use(require('koa-static')(__dirname + '/public/images/'))
 
 app.use(views(__dirname + '/views', {
   extension: 'pug'

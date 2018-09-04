@@ -25,3 +25,8 @@ exports.saveQuestion = async (ctx, next) => {
     let params = ctx.request.body;
     ctx.response.body = await subjectService.saveQuestion(params);
 }
+
+exports.saveUserQuestion = async (ctx, next) => {
+    let params = ctx.request.body;
+    ctx.response.body = await subjectService.saveUserQuestion(params);
+}

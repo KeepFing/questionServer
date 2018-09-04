@@ -38,7 +38,14 @@ let register = async (params) => {
     }
 }
 
+let getUserQuestions = async (params) => {
+    let userId = params.userId;
+    let result = await userDao.getUserQuestions(userId)
+    return result;
+}
+
 module.exports = {
     login       :   login,
-    register    :   register
+    register    :   register,
+    getUserQuestions:getUserQuestions
 };

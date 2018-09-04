@@ -2,6 +2,8 @@ const mysql = require('./../util/mysqlUtil');
 
 const sql = require('../mapper/subjectMapper');
 
+const userQuestionModel = require('../model/userQuestion');
+
 let queryAll = async () => {
     let mysqlOptions = {
         sql : sql.queryAll,
@@ -49,10 +51,16 @@ let saveQuestion = async (questionInfo) => {
     return result;
 }
 
+let saveUserQuestion = async (Info) => {
+    let result = await userQuestionModel.saveUserQuestion(Info);
+    return result
+}
+
 module.exports = {
     queryAll        :   queryAll,
     queryPoint      :   queryPoint,
     savePoint       :   savePoint,
     getQuestion     :   getQuestion,
-    saveQuestion    :   saveQuestion
+    saveQuestion    :   saveQuestion,
+    saveUserQuestion    :   saveUserQuestion
 };

@@ -53,10 +53,22 @@ let saveQuestion = async (params) => {
     }
 }
 
+let saveUserQuestion = async (params) => {
+    params.id = await uuid.getUuid();
+    params.createTime = await common.getLocalTime();
+    try {
+        let result = await subjectDao.saveUserQuestion(params);
+        return R.ok(result)
+    } catch (error) {
+        return R.error()
+    }
+}
+
 module.exports = {
     queryAll        :   queryAll,
     queryPoint      :   queryPoint,
     savePoint       :   savePoint,
     getQuestion     :   getQuestion,
-    saveQuestion    :   saveQuestion
+    saveQuestion    :   saveQuestion,
+    saveUserQuestion    :   saveUserQuestion
 }
